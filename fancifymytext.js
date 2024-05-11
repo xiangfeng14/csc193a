@@ -20,8 +20,29 @@ function bold(){
 }
 
 function normal(){
- document.getElementById("text").style.fontWeight = "normal";
- document.getElementById("text").style.color = "black";
+  document.getElementById("text").style.textDecoration = "none";
+  document.getElementById("text").style.fontWeight = "normal";
+  document.getElementById("text").style.color = "black";
 }
 
-function 
+function moo(){
+  const text = document.getElementById("text").value;
+  const upper = text.toUpperCase();
+
+  const sentence = upper.split(".");
+  for (let i = 0; i < sentence.length; i++) {
+		const one = sentence[i];
+
+		const words = one.split(" ");
+		const last = words.pop();
+
+		const lastMoo = last + "-Moo";
+		words.push(lastMoo);
+
+		sentence[i] = words.join(" ");
+    console.log("Help");
+	}
+  document.getElementById("text").value = sentence.join(". ");
+}
+
+	
